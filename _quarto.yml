@@ -11,6 +11,33 @@ book:
     - intro.qmd
     - weeks/w01/quiz.qmd
     - submissions/w01/laporan.qmd
+    - weeks/w02/quiz.qmd
+    - submissions/w02/laporan.qmd
+    - weeks/w03/quiz.qmd
+    - submissions/w03/laporan.qmd
+    - weeks/w04/quiz.qmd
+    - submissions/w04/laporan.qmd
+    - weeks/w05/quiz.qmd
+    - submissions/w05/laporan.qmd
+    - weeks/w06/quiz.qmd
+    - submissions/w06/laporan.qmd
+    - weeks/w07/quiz.qmd
+    - submissions/w07/laporan.qmd
+    - weeks/w08/quiz.qmd
+    - submissions/w08/laporan.qmd
+    - weeks/w09/quiz.qmd
+    - submissions/w09/laporan.qmd
+    - weeks/w10/quiz.qmd
+    - submissions/w10/laporan.qmd
+    - weeks/w11/quiz.qmd
+    - submissions/w11/laporan.qmd
+    - weeks/w12/quiz.qmd
+    - submissions/w12/laporan.qmd
+    - weeks/w13/quiz.qmd
+    - submissions/w13/laporan.qmd
+    - weeks/w14/quiz.qmd
+    - submissions/w14/laporan.qmd
+
     - summary.qmd
     - references.qmd
 
