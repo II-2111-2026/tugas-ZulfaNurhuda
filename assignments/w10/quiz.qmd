@@ -1,0 +1,90 @@
+---
+title: "Quiz w10 — Minggu 10"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Cara mengerjakan
+
+- Jawab **hanya** dengan mengisi fungsi `q01()` s.d. `q12()` di `submissions/w10/answers.py`.
+- Kamu boleh memakai Python untuk menghitung, misalnya lewat `submissions/w10/laporan.qmd`.
+- Jangan ubah nama fungsi.
+
+### Format jawaban
+
+- **T/F**: kembalikan `True` (Benar) atau `False` (Salah).
+- **MC**: kembalikan huruf `"A"`, `"B"`, `"C"`, atau `"D"`.
+- **Numeric**: kembalikan bilangan `int` atau `float` (pakai titik `.` untuk desimal).
+
+---
+
+## Q01 (T/F)
+
+Teorema Limit Pusat menyatakan bahwa rata-rata sampel akan mendekati distribusi Normal jika ukuran sampel cukup besar ($n \geq 30$).
+
+## Q02 (T/F)
+
+Rata-rata dari distribusi sampling rata-rata ($\bar{X}$) selalu sama dengan rata-rata populasi ($\mu$).
+
+## Q03 (T/F)
+
+Semakin besar ukuran sampel, semakin besar pula Standard Error-nya.
+
+## Q04 (MC)
+
+Jika populasi memiliki $\sigma = 10$ dan ukuran sampel $n = 100$, maka Standard Error ($\sigma_{\bar{X}}$) adalah:
+
+- **A)** 10
+- **B)** 1
+- **C)** 0,1
+- **D)** 100
+
+## Q05 (MC)
+
+Distribusi sampling dari proporsi sampel $p$ akan mendekati Normal jika:
+
+- **A)** $n$ sangat kecil.
+- **B)** $np \geq 5$ dan $n(1-p) \geq 5$.
+- **C)** Populasi sangat heterogen.
+- **D)** $p = 0,5$.
+
+## Q06 (MC)
+
+Faktor $\sqrt{n}$ dalam rumus Standard Error menunjukkan bahwa:
+
+- **A)** Error berkurang secara linear dengan $n$.
+- **B)** Untuk mengurangi error menjadi setengahnya, kita butuh sampel 4 kali lebih banyak.
+- **C)** Error tidak dipengaruhi oleh $n$.
+- **D)** Sampel besar selalu buruk.
+
+## Q07 (MC)
+
+Statistik sampel yang digunakan untuk menduga parameter populasi disebut:
+
+- **A)** Estimator.
+- **B)** Variabel.
+- **C)** Konstanta.
+- **D)** Bias.
+
+## Q08 (Numeric)
+
+Jika $\mu = 50$ dan $\sigma = 10$, berapakah nilai rata-rata dari distribusi sampling rata-rata untuk $n = 25$?
+
+## Q09 (Numeric)
+
+Hitung Standard Error jika $\sigma = 12$ dan $n = 36$.
+
+## Q10 (Numeric)
+
+Jika rata-rata populasi 100 dan Standard Error 2, berapakah skor-Z untuk rata-rata sampel $\bar{X} = 104$?
+
+## Q11 (Numeric)
+
+Jika ukuran sampel adalah 64 dan simpangan baku populasi 8, berapakah simpangan baku distribusi rata-rata sampel?
+
+## Q12 (Numeric)
+
+Berapakah nilai rata-rata sampel $\bar{X}$ jika skor-Z nya adalah 1,5, $\mu = 80$, dan Standard Error = 4?

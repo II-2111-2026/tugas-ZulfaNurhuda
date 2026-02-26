@@ -3,52 +3,55 @@ project:
   output-dir: docs
 
 book:
-  title: "Komputasi Probabiitas dan Statistika"
-  author: "Nama lengkap"
-  date: "2/16/2026"
+  title: "Komputasi Probabiltas dan Statistika"
+  author: "Muhammad Zulfa Fauzan Nurhuda (18224064)"
+  date: today
+  date-format: "DD MMMM YYYY"
   chapters:
     - index.qmd
-    - intro.qmd
-    - weeks/w01/quiz.qmd
+    - contents/intro.qmd
+    - assignments/w01/quiz.qmd
     - submissions/w01/laporan.qmd
-    - weeks/w02/quiz.qmd
+    - assignments/w02/quiz.qmd
     - submissions/w02/laporan.qmd
-    - weeks/w03/quiz.qmd
+    - assignments/w03/quiz.qmd
     - submissions/w03/laporan.qmd
-    - weeks/w04/quiz.qmd
+    - assignments/w04/quiz.qmd
     - submissions/w04/laporan.qmd
-    - weeks/w05/quiz.qmd
+    - assignments/w05/quiz.qmd
     - submissions/w05/laporan.qmd
-    - weeks/w06/quiz.qmd
+    - assignments/w06/quiz.qmd
     - submissions/w06/laporan.qmd
-    - weeks/w07/quiz.qmd
+    - assignments/w07/quiz.qmd
     - submissions/w07/laporan.qmd
-    - weeks/w08/quiz.qmd
+    - assignments/w08/quiz.qmd
     - submissions/w08/laporan.qmd
-    - weeks/w09/quiz.qmd
+    - assignments/w09/quiz.qmd
     - submissions/w09/laporan.qmd
-    - weeks/w10/quiz.qmd
+    - assignments/w10/quiz.qmd
     - submissions/w10/laporan.qmd
-    - weeks/w11/quiz.qmd
+    - assignments/w11/quiz.qmd
     - submissions/w11/laporan.qmd
-    - weeks/w12/quiz.qmd
+    - assignments/w12/quiz.qmd
     - submissions/w12/laporan.qmd
-    - weeks/w13/quiz.qmd
+    - assignments/w13/quiz.qmd
     - submissions/w13/laporan.qmd
-    - weeks/w14/quiz.qmd
+    - assignments/w14/quiz.qmd
     - submissions/w14/laporan.qmd
+    - contents/summary.qmd
+    - contents/references.qmd
 
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+bibliography: contents/references.bib
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-
-
-
-
+    theme: superhero
+    toc: true
+    toc-depth: 5
+    smooth-scroll: true
+    code-copy: true
+    number-sections: false
+execute:
+  echo: false
+  warning: false
+  message: false

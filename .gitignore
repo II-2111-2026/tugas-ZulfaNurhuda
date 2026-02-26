@@ -1,17 +1,14 @@
-# Python
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
 venv/
 
-# Quarto
 .quarto/
 *_files/
 *_cache/
 *_site/
 
-# OS
 .DS_Store
 Thumbs.db
 

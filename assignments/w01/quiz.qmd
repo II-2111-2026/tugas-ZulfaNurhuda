@@ -1,0 +1,90 @@
+---
+title: "Quiz w01 — Minggu 01"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Cara mengerjakan
+
+- Jawab **hanya** dengan mengisi fungsi `q01()` s.d. `q12()` di `submissions/w01/answers.py`.
+- Kamu boleh memakai Python untuk menghitung, misalnya lewat `submissions/w01/laporan.qmd`.
+- Jangan ubah nama fungsi.
+
+### Format jawaban
+
+- **T/F**: kembalikan `True` (Benar) atau `False` (Salah).
+- **MC**: kembalikan huruf `"A"`, `"B"`, `"C"`, atau `"D"`.
+- **Numeric**: kembalikan bilangan `int` atau `float` (pakai titik `.` untuk desimal).
+
+---
+
+## Q01 (T/F)
+
+Dalam model probabilistik, output yang sama akan selalu dihasilkan dari input yang sama terlepas dari variasi acak.
+
+## Q02 (T/F)
+
+Ruang sampel dari sebuah eksperimen acak harus mencakup semua hasil yang mungkin terjadi tanpa tumpang tindih.
+
+## Q03 (T/F)
+
+Probabilitas empiris mendekati probabilitas teoretis ketika jumlah percobaan mendekati tak hingga.
+
+## Q04 (MC)
+
+Manakah yang merupakan contoh variabel acak dalam sistem STI?
+
+- **A)** Kapasitas total hard disk 1TB.
+- **B)** Jumlah core pada prosesor Intel i7.
+- **C)** Waktu yang dibutuhkan untuk merespons query database.
+- **D)** Jumlah bit dalam satu byte.
+
+## Q05 (MC)
+
+Jika sebuah ruang sampel $S$ terdiri dari 4 kejadian yang memiliki peluang sama, maka probabilitas satu kejadian adalah:
+
+- **A)** 0,5
+- **B)** 0,25
+- **C)** 0,75
+- **D)** 1,0
+
+## Q06 (MC)
+
+Kejadian yang mustahil terjadi memiliki nilai probabilitas sebesar:
+
+- **A)** 0
+- **B)** 1
+- **C)** -1
+- **D)** 0,5
+
+## Q07 (MC)
+
+Sekumpulan hasil eksperimen yang merupakan subset dari ruang sampel disebut:
+
+- **A)** Populasi.
+- **B)** Parameter.
+- **C)** Kejadian (Event).
+- **D)** Konstanta.
+
+## Q08 (Numeric)
+
+Berapa jumlah elemen dalam ruang sampel jika kita melempar dua buah dadu bersisi enam?
+
+## Q09 (Numeric)
+
+Jika probabilitas sebuah link internet mati adalah 0,01, berapa probabilitas link tersebut hidup?
+
+## Q10 (Numeric)
+
+Berapa banyak susunan berbeda yang bisa dibuat dari kata "DATA"?
+
+## Q11 (Numeric)
+
+Jika sebuah server memiliki probabilitas uptime 0,95, berapa probabilitas server tersebut downtime dalam satu periode?
+
+## Q12 (Numeric)
+
+Dalam simulasi 1000 kali login, jika 20 kali gagal, berapa frekuensi relatif kegagalan tersebut?

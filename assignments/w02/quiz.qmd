@@ -1,0 +1,90 @@
+---
+title: "Quiz w02 — Minggu 02"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Cara mengerjakan
+
+- Jawab **hanya** dengan mengisi fungsi `q01()` s.d. `q12()` di `submissions/w02/answers.py`.
+- Kamu boleh memakai Python untuk menghitung, misalnya lewat `submissions/w02/laporan.qmd`.
+- Jangan ubah nama fungsi.
+
+### Format jawaban
+
+- **T/F**: kembalikan `True` (Benar) atau `False` (Salah).
+- **MC**: kembalikan huruf `"A"`, `"B"`, `"C"`, atau `"D"`.
+- **Numeric**: kembalikan bilangan `int` atau `float` (pakai titik `.` untuk desimal).
+
+---
+
+## Q01 (T/F)
+
+Jika dua kejadian $A$ dan $B$ saling lepas, maka $P(A \cap B) = 0$.
+
+## Q02 (T/F)
+
+Probabilitas dari gabungan dua kejadian selalu lebih besar daripada probabilitas masing-masing kejadian.
+
+## Q03 (T/F)
+
+Hukum komplemen menyatakan bahwa $P(A) + P(A^c) = 1$.
+
+## Q04 (MC)
+
+Jika $P(A) = 0,4$ dan $P(B) = 0,3$ serta keduanya saling lepas, maka $P(A \cup B)$ adalah:
+
+- **A)** 0,7
+- **B)** 0,12
+- **C)** 0,1
+- **D)** 0,5
+
+## Q05 (MC)
+
+Manakah simbol yang merepresentasikan irisan antara kejadian $A$ dan $B$?
+
+- **A)** $A \cup B$
+- **B)** $A \cap B$
+- **C)** $A \setminus B$
+- **D)** $A^c$
+
+## Q06 (MC)
+
+Jika $A \subset B$, maka manakah pernyataan yang benar?
+
+- **A)** $P(A) > P(B)$
+- **B)** $P(A \cap B) = P(A)$
+- **C)** $P(A \cup B) = P(A)$
+- **D)** $P(A) + P(B) = 1$
+
+## Q07 (MC)
+
+Dalam diagram Venn, area di luar lingkaran $A$ merepresentasikan:
+
+- **A)** Kejadian $A$.
+- **B)** Komplemen kejadian $A$ ($A^c$).
+- **C)** Irisan $A$ dengan $B$.
+- **D)** Ruang sampel kosong.
+
+## Q08 (Numeric)
+
+Jika $P(A) = 0,6$, $P(B) = 0,5$, dan $P(A \cap B) = 0,2$, berapakah $P(A \cup B)$?
+
+## Q09 (Numeric)
+
+Sebuah sistem memiliki probabilitas gagal 0,05. Berapakah probabilitas sistem tersebut berhasil?
+
+## Q10 (Numeric)
+
+Jika kejadian $A$ dan $B$ saling lepas dengan $P(A) = 0,2$ dan $P(B) = 0,5$, berapakah $P(A \cap B)$?
+
+## Q11 (Numeric)
+
+Berapa probabilitas munculnya angka genap pada pelemparan satu dadu adil?
+
+## Q12 (Numeric)
+
+Jika $P(A \cup B) = 0,8$, $P(A) = 0,5$, dan $A$ serta $B$ saling lepas, berapakah $P(B)$?

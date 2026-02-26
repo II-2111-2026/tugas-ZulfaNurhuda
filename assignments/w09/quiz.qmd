@@ -1,0 +1,90 @@
+---
+title: "Quiz w09 — Minggu 09"
+format: html
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Cara mengerjakan
+
+- Jawab **hanya** dengan mengisi fungsi `q01()` s.d. `q12()` di `submissions/w09/answers.py`.
+- Kamu boleh memakai Python untuk menghitung, misalnya lewat `submissions/w09/laporan.qmd`.
+- Jangan ubah nama fungsi.
+
+### Format jawaban
+
+- **T/F**: kembalikan `True` (Benar) atau `False` (Salah).
+- **MC**: kembalikan huruf `"A"`, `"B"`, `"C"`, atau `"D"`.
+- **Numeric**: kembalikan bilangan `int` atau `float` (pakai titik `.` untuk desimal).
+
+---
+
+## Q01 (T/F)
+
+Jika korelasi antara dua variabel adalah nol, maka kedua variabel tersebut pasti independen.
+
+## Q02 (T/F)
+
+PDF marginal $f_X(x)$ didapatkan dengan mengintegralkan $f_{X,Y}(x,y)$ terhadap $y$ dari $-\infty$ ke $\infty$.
+
+## Q03 (T/F)
+
+Nilai koefisien korelasi selalu berada di antara -1 dan 1.
+
+## Q04 (MC)
+
+Jika $X$ dan $Y$ independen, maka $E[XY]$ sama dengan:
+
+- **A)** $E[X]+E[Y]$
+- **B)** $E[X]E[Y]$
+- **C)** $E[X]/E[Y]$
+- **D)** 0
+
+## Q05 (MC)
+
+Manakah ukuran yang menunjukkan kekuatan hubungan linear antara dua variabel?
+
+- **A)** Variansi.
+- **B)** Mean.
+- **C)** Korelasi.
+- **D)** CDF.
+
+## Q06 (MC)
+
+Jika $Var(X) = 4$, $Var(Y) = 9$, dan $X, Y$ independen, maka $Var(X+Y)$ adalah:
+
+- **A)** 13
+- **B)** 5
+- **C)** 36
+- **D)** 6,5
+
+## Q07 (MC)
+
+Fungsi probabilitas kondisional $f_{X|Y}(x|y)$ didefinisikan sebagai:
+
+- **A)** $f_{X,Y}(x,y) / f_Y(y)$
+- **B)** $f_{X,Y}(x,y) / f_X(x)$
+- **C)** $f_X(x) f_Y(y)$
+- **D)** $f_{X,Y}(x,y) - f_X(x)$
+
+## Q08 (Numeric)
+
+Jika $Cov(X,Y) = 2$, $\sigma_X = 2$, $\sigma_Y = 2$, berapakah koefisien korelasinya?
+
+## Q09 (Numeric)
+
+Berapakah nilai $E[X+Y]$ jika $E[X] = 10$ dan $E[Y] = 20$?
+
+## Q10 (Numeric)
+
+Jika $f(x,y) = 1/4$ untuk $0 \leq x \leq 2$ dan $0 \leq y \leq 2$, berapakah $P(X \leq 1, Y \leq 1)$?
+
+## Q11 (Numeric)
+
+Dalam tabel diskrit, jika $P(1,1) = 0,1$, $P(1,2) = 0,2$, $P(2,1) = 0,3$, $P(2,2) = 0,4$, berapakah probabilitas marginal $P(X = 1)$?
+
+## Q12 (Numeric)
+
+Jika $X$ dan $X$ memiliki korelasi 1 dan $Var(X) = 4$, berapakah $Var(X+X)$?

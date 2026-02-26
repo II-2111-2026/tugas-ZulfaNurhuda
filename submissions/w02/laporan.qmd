@@ -1,181 +1,154 @@
 ---
-title: "Laporan w02 — Ringkasan Jawaban (diambil langsung dari answers.py)"
-format:
-  html:
-    toc: true
-    toc-depth: 2
-execute:
-  echo: false
-  warning: false
-  message: false
+title: "Laporan Minggu 02"
+subtitle: "Ringkasan Eksekusi & Inspeksi Kode"
 ---
 
-## Kenapa ada laporan ini?
+::: {.callout-tip title="Tujuan Laporan Ini"}
+Laporan ini di-*generate* secara otomatis untuk menampilkan hasil eksekusi kodemu dari `submissions/w01/answers.py` dalam format yang **rapi, terstruktur, dan nyaman dibaca**.
 
-Supaya kamu bisa melihat hasil jawabanmu dalam format yang **rapi & ramah dibaca**, tanpa membuat “dua versi jawaban”.
+✅ **Sumber Kebenaran Tunggal:** Sistem *autograder* tetap akan menilai langsung dari file `.py` milikmu, laporan ini murni hanya sebagai *dashboard* visualisasi.
+:::
 
-✅ **Sumber kebenaran tunggal tetap:** `submissions/w02/answers.py`  
-Laporan ini hanya **memanggil fungsi** `q01()..q12()` dari `answers.py` dan menampilkan outputnya.
+::: {.callout-important title="Catatan Penting Penilaian"}
+Laporan ini **bukan** penilaian! Penilaian resmi tetap dari *autograder* (`pytest`). Untuk melakukan simulasi penilaian di komputermu, jalankan perintah ini di terminal:
 
----
+```bash
+pytest -q checkers/w02/quiz_tests.py
+```
 
-## Cara render (lokal)
+atau dengan perintah:
+
+```bash
+make test WEEK=w02
+```
+:::
+
+::: {.callout-note collapse="true" title="Cara Render Manual di Lokal (Klik untuk membuka)"}
+Jika kamu melakukan perubahan pada kodemu dan ingin melihat hasilnya tanpa harus melakukan `git push`, jalankan perintah ini di terminal:
 
 ```bash
 quarto render submissions/w02/laporan.qmd
 ```
-
-> Jika Quarto belum terpasang, kamu tetap bisa melihat hasil lewat **GitHub Actions** atau menjalankan Python secara manual.
+:::
 
 ---
 
-## Ringkasan hasil (table)
+## 📊 Ringkasan Eksekusi
 
-```{{python}}
+::: {.callout-warning appearance="simple"}
+Tabel di bawah ini memotong (*truncate*) tampilan *array/list* yang terlalu panjang agar format tabel tidak rusak. Untuk melihat hasil jawaban penuh, silakan cek bagian **Inspeksi Detail** di bawah.
+:::
+
+```{python}
 import sys
+import math
+import reprlib
+import numpy as np
+import pandas as pd
 from pathlib import Path
 
 cwd = Path.cwd().resolve()
 repo_root = cwd if (cwd / "submissions").exists() else cwd.parents[1]
-sys.path.insert(0, str(repo_root))
+if str(repo_root) not in sys.path:
+    sys.path.insert(0, str(repo_root))
 
-import math
-import numpy as np
-import pandas as pd
-
-# Import jawaban (single source of truth)
 from submissions.w02 import answers as A
 
-
-def _preview(val, maxlen=80):
-    if val is None:
-        return ""
-    if isinstance(val, (list, tuple, np.ndarray)):
-        arr = list(val)
-        head = arr[:8]
-        s = f"{type(val).__name__}(len={len(arr)}) " + repr(head)
-        if len(arr) > 8:
-            s += " ..."
-        return s[:maxlen]
-    s = repr(val)
-    return s if len(s) <= maxlen else s[:maxlen] + "..."
-
-
 def _is_number(x):
-    return isinstance(x, (int, float, np.integer, np.floating)) and not (isinstance(x, bool))
+    return isinstance(x, (int, float, np.number)) and not isinstance(x, bool)
 
+def _in_0_1(x):
+    return _is_number(x) and not math.isnan(x) and (0.0 <= float(x) <= 1.0)
 
-def _pmf_heuristic(val):
-    # heuristik: list/tuple/ndarray angka nonnegatif dan jumlah ~ 1
-    if not isinstance(val, (list, tuple, np.ndarray)):
-        return (False, None)
-    try:
-        arr = np.array(val, dtype=float)
-    except Exception:
-        return (False, None)
-    if arr.ndim != 1 or arr.size == 0:
-        return (False, None)
-    if np.any(np.isnan(arr)):
-        return (False, None)
-    s = float(arr.sum())
-    if np.all(arr >= -1e-12) and abs(s - 1.0) <= 1e-6:
-        return (True, s)
-    return (False, s)
+prob_tasks = {"q08", "q09", "q10", "q11", "q12"}
+count_tasks = set()
+var_tasks = set()
+corr_tasks = set()
+bool_num_tasks = set()
 
-
-def _prob_heuristic(val):
-    # heuristik: angka di [0,1]
-    if not _is_number(val):
-        return False
-    v = float(val)
-    if math.isnan(v) or math.isinf(v):
-        return False
-    return (0.0 <= v <= 1.0)
-
-
-rows = []
-details = []
+rows, details = [], []
+previewer = reprlib.Repr()
+previewer.maxlist = previewer.maxarray = previewer.maxtuple = 5
+previewer.maxstring = 60
 
 for i in range(1, 13):
     name = f"q{i:02d}"
     func = getattr(A, name, None)
-    status = "OK"
-    err = ""
-    val = None
+    status, err, val = "OK", "", None
+    notes = []
 
     if func is None:
-        status = "MISSING"
-        err = "Function not found"
+        status, err = "MISSING", "Fungsi tidak ditemukan"
     else:
         try:
             val = func()
         except NotImplementedError:
-            status = "TODO"
-            err = "NotImplementedError"
+            status, err = "TODO", "Belum dikerjakan"
         except Exception as e:
-            status = "ERR"
-            err = f"{type(e).__name__}: {e}"
+            status, err = "ERR", f"{type(e).__name__}: {e}"
 
-    notes = []
     if status == "OK":
-        # generic sanity checks (no answer key)
-        if _prob_heuristic(val):
-            notes.append("Looks like a probability (0..1)")
-        ok_pmf, s = _pmf_heuristic(val)
-        if ok_pmf:
-            notes.append("Looks like a PMF (sum≈1, all≥0)")
+        if name in prob_tasks and not _in_0_1(val):
+            notes.append("⚠️ Bukan probabilitas (0..1)")
+        if name in count_tasks and not isinstance(val, (int, np.integer)):
+            notes.append("⚠️ Bukan bilangan bulat")
+        if name in var_tasks and _is_number(val) and float(val) < 0:
+            notes.append("⚠️ Nilai tidak boleh negatif")
+        if name in corr_tasks and _is_number(val) and not (-1.0 <= float(val) <= 1.0):
+            notes.append("⚠️ Korelasi harus rentang -1.0 .. 1.0")
+        if name in bool_num_tasks and val not in (0, 1):
+            notes.append("⚠️ Jawaban harus angka 0 atau 1")
+
         if isinstance(val, float) and (math.isnan(val) or math.isinf(val)):
-            notes.append("⚠️ NaN/Inf detected")
+            notes.append("⚠️ Terdapat NaN/Inf")
 
     if status in ("ERR", "MISSING"):
-        notes.append("⚠️ Fix required")
-    if status == "TODO":
-        notes.append("Implement this task")
+        notes.append("❌ Perlu diperbaiki")
+    elif status == "TODO":
+        notes.append("📝 Menunggu implementasi")
+    elif not notes:
+        notes.append("✅ Aman")
 
-    rows.append({
-        "Task": name.upper(),
-        "Status": status,
-        "Preview": _preview(val),
-        "Notes": "; ".join(notes),
-    })
+    rows.append(
+        {
+            "Soal": name.upper(),
+            "Status": status,
+            "Preview Output": previewer.repr(val) if val is not None else "-",
+            "Catatan Sistem": " | ".join(notes),
+        }
+    )
     details.append((name, status, val, err))
 
 df = pd.DataFrame(rows)
-df
+df.style.hide(axis="index")
 ```
 
 ---
 
-## Detail output per task
+## 🔍 Inspeksi Detail per Soal
 
-```{{python}}
-#| results: asis
+```{python}
+#| output: asis
 
 def _md_escape(s: str) -> str:
-    return s.replace("`", "\`")
+    return s.replace("`", "\\`")
 
 for name, status, val, err in details:
-    print(f"### {name.upper()} — {status}")
     if status == "OK":
-        print("```")
-        print(repr(val))
-        print("```")
+        icon = "🟢"
+    elif status == "TODO":
+        icon = "🟡"
     else:
-        print(f"**Error/Info:** `{_md_escape(err)}`\n")
-```
+        icon = "🔴"
 
----
-
-## Catatan penting
-
-- Laporan ini **bukan** penilaian. Penilaian resmi tetap dari autograder (pytest).
-- Jika hasil terlihat aneh, cek lagi:
-  1) rumus manualnya
-  2) tipe data yang diminta (int/float/list/bool/tuple)
-  3) urutan list (apakah harus sorted?)
-  4) random harus pakai seed (jika diminta)
-
-Self-check resmi (opsional):
-```bash
-pytest -q tests_bank/w02/quiz_tests.py
+    print(f"### {icon} Task {name.upper()} \n")
+    
+    if status == "OK":
+        print("```python")
+        print(repr(val)) 
+        print("```\n")
+    elif status == "TODO":
+        print(f"> ⏳ *Fungsi ini belum diimplementasikan.* \n\n")
+    else:
+        print(f"::: {{.callout-important title='Terjadi Error'}}\n`{_md_escape(err)}`\n:::\n\n")
 ```

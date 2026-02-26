@@ -1,93 +1,71 @@
-name: GitHub Classroom Workflow (No Late Penalty + Quarto Render)
+name: 🎓 Komputasi Probabilitas dan Statistika Autograding Pipeline
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  autograding:
+  evaluate:
+    name: 🤖 Evaluate & Render
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout student repo
+      - name: 📥 Checkout Repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
-      - name: Detect week
-        id: cfg
-        run: |
-          python3 tools/detect_week.py
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
 
-      - name: Prepare active tests (copy from tests_bank)
-        run: |
-          set -euo pipefail
-          WEEK="${{ steps.cfg.outputs.week }}"
+      - name: 🕵️ Detect Active Week
+        id: detect-week
+        run: python3 tools/detect_week.py
 
-          # Prevent students from adding their own *_test.py files
-          EXTRA="$(find . -name '*_test.py' -not -path './__active_tests__/*' -print | head -n 1 || true)"
-          if [ -n "$EXTRA" ]; then
-            echo "Found unexpected test file: $EXTRA"
-            echo "Please do not add *_test.py files. Put your work in submissions/$WEEK/answers.py."
-            exit 1
-          fi
+      - name: 🧪 Prepare Test Suites
+        run: bash tools/prepare_tests.sh "${{ steps.detect-week.outputs.week }}"
 
-          rm -rf __active_tests__
-          mkdir -p __active_tests__
-
-          if [ ! -f "tests_bank/$WEEK/quiz_tests.py" ]; then
-            echo "Missing tests_bank/$WEEK/quiz_tests.py"
-            exit 1
-          fi
-
-          cp "tests_bank/$WEEK/quiz_tests.py" "__active_tests__/quiz_test.py"
-
-      - name: Python autograding (pytest)
+      - name: ⚙️ Execute Autograder (Pytest)
         id: python-test
         uses: classroom-resources/autograding-python-grader@v1
         with:
           timeout: "15"
-          max-score: "${{ steps.cfg.outputs.max_score }}"
+          max-score: "${{ steps.detect-week.outputs.max_score }}"
           setup-command: |
             python -m pip install -U pip
             pip install -r requirements.txt
 
-      - name: Report to GitHub Classroom
+      - name: ✨ Refine & Perfect Scores
+        id: refine-scores
+        if: always()
+        env:
+          RAW_RESULT: ${{ steps.python-test.outputs.result }}
+          MAX_SCORE: ${{ steps.detect-week.outputs.max_score }}
+        run: python3 tools/refine_scores.py
+
+      - name: 📤 Report to GitHub Classroom
+        if: always()
         uses: classroom-resources/autograding-grading-reporter@v1
         env:
-          PYTHON-TEST_RESULTS: ${{ steps.python-test.outputs.result }}
+          PYTHON-TEST_RESULTS: ${{ steps.refine-scores.outputs.result }}
         with:
           runners: python-test
 
-      # -----------------------
-      # Quarto auto-render step
-      # -----------------------
-      - name: Install Quarto
+      - name: 📦 Install Quarto CLI
         if: always()
         uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Render Quarto report(s)
+      - name: 📄 Render HTML Reports
         if: always()
         continue-on-error: true
-        run: |
-          set -euo pipefail
-          WEEK="${{ steps.cfg.outputs.week }}"
+        run: bash tools/render_quarto.sh
 
-          # Ensure python deps for executing python chunks in Quarto
-          python -m pip install -U pip
-          pip install -r requirements.txt
-
-          # Render student-friendly report (single source of truth: answers.py)
-          quarto render
-          
-
-      - name: Upload Quarto HTML as artifact
+      - name: 📎 Upload Reports as Artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: "quarto-${{ steps.cfg.outputs.week }}"
+          name: "quarto-${{ steps.detect-week.outputs.week }}"
           if-no-files-found: ignore
-          path: |
-            submissions/${{ steps.cfg.outputs.week }}/laporan.html
-            submissions/${{ steps.cfg.outputs.week }}/laporan_files/**
-            weeks/${{ steps.cfg.outputs.week }}/quiz.html
-            weeks/${{ steps.cfg.outputs.week }}/quiz_files/**
+          path: docs/
