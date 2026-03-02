@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Jika kejadian A dan B independen, maka P(A|B) = P(A).
     """
-    raise NotImplementedError
+    return True
 
 def q02() -> bool:
     """
     [T/F] Probabilitas kondisional P(A|B) selalu sama dengan P(B|A).
     """
-    raise NotImplementedError
+    return False
 
 def q03() -> bool:
     """
     [T/F] Teorema Bayes memungkinkan kita untuk membalik kondisi probabilitas dari P(B|A) menjadi P(A|B).
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) 0,2
      D) 0,5
     """
-    raise NotImplementedError
+    return "C"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) P(A)+P(B)
      D) P(A∩B)
     """
-    raise NotImplementedError
+    return "A"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Kondisional.
      D) Komplementer.
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) Probabilitas mendeteksi orang sehat sangat tinggi.
      D) Tes tersebut tidak berguna.
     """
-    raise NotImplementedError
+    return "B"
 
 def q08() -> float:
     """
     [Numeric] Jika P(A∩B) = 0,2 dan P(B) = 0,5, berapakah P(A|B)?
     """
-    raise NotImplementedError
+    return 0.4
 
 def q09() -> float:
     """
     [Numeric] Probabilitas hujan adalah 0,1. Jika hujan, probabilitas jalan macet adalah 0,8. Berapa probabilitas (Hujan DAN Macet)?
     """
-    raise NotImplementedError
+    return 0.08
 
 def q10() -> float:
     """
     [Numeric] Dalam sebuah populasi, 1% menderita penyakit. Sebuah tes memiliki akurasi 99% (baik untuk yang sakit maupun sehat). Jika seseorang dites positif, berapa probabilitas dia benar-benar sakit?
     """
-    raise NotImplementedError
+    return 0.5
 
 def q11() -> float:
     """
     [Numeric] Jika P(A) = 0,3, P(B|A) = 0,7 dan P(B|Ac) = 0,4, hitung P(B) menggunakan Hukum Probabilitas Total.
     """
-    raise NotImplementedError
+    return 0.49
 
 def q12() -> float:
     """
     [Numeric] Dari soal nomor 11, hitung P(A|B) menggunakan Teorema Bayes (Gunakan 3 desimal).
     """
-    raise NotImplementedError
+    return 0.429
