@@ -90,7 +90,7 @@ for i in range(1, 13):
     if status == "OK":
         if name in prob_tasks and not _in_0_1(val):
             notes.append("⚠️ Bukan probabilitas (0..1)")
-        if name in count_tasks and not isinstance(val, (int, np.integer)):
+        if name in count_tasks and int(val) != val:
             notes.append("⚠️ Bukan bilangan bulat")
         if name in var_tasks and _is_number(val) and float(val) < 0:
             notes.append("⚠️ Nilai tidak boleh negatif")

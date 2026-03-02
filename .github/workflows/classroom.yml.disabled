@@ -52,20 +52,3 @@ jobs:
           PYTHON-TEST_RESULTS: ${{ steps.refine-scores.outputs.result }}
         with:
           runners: python-test
-
-      - name: 📦 Install Quarto CLI
-        if: always()
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: 📄 Render HTML Reports
-        if: always()
-        continue-on-error: true
-        run: bash tools/render_quarto.sh
-
-      - name: 📎 Upload Reports as Artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: "quarto-${{ steps.detect-week.outputs.week }}"
-          if-no-files-found: ignore
-          path: docs/

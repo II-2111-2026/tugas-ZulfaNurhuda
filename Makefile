@@ -37,6 +37,8 @@ test:
 render:
 	@printf "$(BLUE)[BUILD]$(RESET) Merender proyek Quarto...\n"
 	@quarto render
+	@printf "Untuk melihat hasil render gunakan:\n"
+	@printf "  $(BLUE)>>$(BLUE) $(GREEN)quarto preview$(GREEN)"
 
 clean:
 	@printf "$(BLUE)[CLEAN]$(RESET) Menghapus artifact dan semua cache...\n"

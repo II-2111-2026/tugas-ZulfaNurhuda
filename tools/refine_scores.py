@@ -19,15 +19,22 @@ try:
     tests = decoded_json.get("tests", [])
 
     if tests:
-        original_total = sum(float(t.get("score", 0)) for t in tests)
+        original_scores = [float(t.get("score", 0)) for t in tests]
+        exact_total = sum(original_scores)
+
+        target_total = round(exact_total, 2)
 
         for t in tests:
             t["score"] = round(float(t.get("score", 0)), 2)
 
-        new_total = sum(t["score"] for t in tests)
+        current_rounded_total = sum(t["score"] for t in tests)
+        diff = round(target_total - current_rounded_total, 2)
 
-        if abs(original_total - max_score) < 1e-4:
-            tests[-1]["score"] = round(tests[-1]["score"] + (max_score - new_total), 2)
+        if diff != 0:
+            for t in reversed(tests):
+                if t["score"] > 0:
+                    t["score"] = round(t["score"] + diff, 2)
+                    break
 
         refined_json = json.dumps(decoded_json)
         refined_base64 = base64.b64encode(refined_json.encode("utf-8")).decode("utf-8")
