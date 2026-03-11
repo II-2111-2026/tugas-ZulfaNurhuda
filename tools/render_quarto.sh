@@ -2,6 +2,8 @@
 set -euo pipefail
 
 python -m pip install -U pip
-pip install -r requirements.txt
+if [ -f requirements.txt ]; then
+    pip install -r requirements.txt
+fi
 
 quarto render

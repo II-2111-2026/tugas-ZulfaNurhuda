@@ -73,7 +73,7 @@ def q07() -> str:
 
 def q08() -> float:
     """
-    [Numeric] Jika X memiliki nilai 0, 1 dengan probabilitas 0,4, 0,6, berapakah E[X]?
+    [Numeric] Jika X memiliki nilai (0, 1) dengan probabilitas 0,4, 0,6, berapakah E[X]?
     """
     return 0.6
 
