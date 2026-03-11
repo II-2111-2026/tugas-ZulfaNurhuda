@@ -37,11 +37,18 @@ jobs:
           if-no-files-found: ignore
           path: docs/
 
+      - name: 🔀 Setup Redirect Rules
+        run: |
+          echo "/github  https://github.com/ii-2111-2026/tugas-ZulfaNurhuda  302" > docs/_redirects
+          echo "✅ File '_redirects' berhasil dibuat!"
+
       - name: 🚀 Deploy Docs to Mirror Repository
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs
-          repository-name: ZulfaNurhuda/QuartoArtifact-ProbStat
+          repository-name: ZulfaNurhuda/QuartoArtifactPublish-ProbStat
           branch: main
           token: ${{ secrets.MIRROR_REPO_PAT }}
           commit-message: "docs: auto-publish ${{ steps.detect-week.outputs.week }} Quarto Artifact from CI/CD pipeline"
+          clean: true 
+          workspace: .

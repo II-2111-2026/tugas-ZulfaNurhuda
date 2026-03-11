@@ -6,7 +6,7 @@ on:
 
 jobs:
   evaluate:
-    name: 🤖 Evaluate & Render
+    name: 🤖 Evaluate
     runs-on: ubuntu-latest
     steps:
       - name: 📥 Checkout Repository

@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Nilai harapan dari sebuah variabel acak harus merupakan salah satu nilai yang mungkin muncul dari variabel tersebut.
     """
-    raise NotImplementedError
+    return False
 
 def q02() -> bool:
     """
     [T/F] Variansi dari sebuah variabel acak tidak pernah bernilai negatif.
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Jika X adalah konstanta c, maka E[X] = c dan Var(X) = 0.
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) 8
      D) 5
     """
-    raise NotImplementedError
+    return "B"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) E[X]
      D) E[X]2
     """
-    raise NotImplementedError
+    return "A"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) CDF.
      D) MGF.
     """
-    raise NotImplementedError
+    return "C"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) Selisih antara nilai maksimum dan minimum.
      D) Nilai harapan dari X.
     """
-    raise NotImplementedError
+    return "A"
 
 def q08() -> float:
     """
     [Numeric] Jika X memiliki nilai 0, 1 dengan probabilitas 0,4, 0,6, berapakah E[X]?
     """
-    raise NotImplementedError
+    return 0.6
 
 def q09() -> float:
     """
     [Numeric] Hitung Var(X) untuk variabel pada soal nomor 8.
     """
-    raise NotImplementedError
+    return 0.24
 
 def q10() -> float:
     """
     [Numeric] Jika E[X] = 10 dan E[X2] = 116, berapakah variansinya?
     """
-    raise NotImplementedError
+    return 16.0
 
 def q11() -> float:
     """
     [Numeric] Sebuah variabel acak memiliki nilai 1, 2, 3 dengan peluang sama. Berapakah nilai harapannya?
     """
-    raise NotImplementedError
+    return 2.0
 
 def q12() -> float:
     """
     [Numeric] Jika Var(X) = 4, berapakah Var(3X+5)?
     """
-    raise NotImplementedError
+    return 36.0
