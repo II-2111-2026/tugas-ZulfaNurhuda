@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Distribusi Binomial digunakan untuk eksperimen dengan jumlah percobaan yang tidak terbatas.
     """
-    raise NotImplementedError
+    return False
 
 def q02() -> bool:
     """
     [T/F] Parameter mean dan variansi pada distribusi Poisson memiliki nilai yang sama.
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Distribusi Bernoulli adalah kasus khusus dari distribusi Binomial dengan n = 1.
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) 8
      D) 1,6
     """
-    raise NotImplementedError
+    return "A"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) Uniform.
      D) Normal.
     """
-    raise NotImplementedError
+    return "B"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Selalu 0,5.
      D) Berkurang seiring waktu.
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) Geometrik.
      D) Eksponensial.
     """
-    raise NotImplementedError
+    return "B"
 
 def q08() -> float:
     """
     [Numeric] Jika X ~ Bin(4, 0,5), hitung P(X = 2).
     """
-    raise NotImplementedError
+    return 0.375
 
 def q09() -> float:
     """
     [Numeric] Untuk distribusi Poisson dengan lambda = 2, berapakah probabilitas P(X = 0)? (Gunakan 3 desimal)
     """
-    raise NotImplementedError
+    return 0.135
 
 def q10() -> float:
     """
     [Numeric] Hitung variansi dari variabel acak X ~ Bin(100, 0,1).
     """
-    raise NotImplementedError
+    return 9.0
 
 def q11() -> float:
     """
     [Numeric] Berapakah nilai maksimum yang mungkin dari variabel acak X ~ Bin(10, 0,5)?
     """
-    raise NotImplementedError
+    return 10.0
 
 def q12() -> float:
     """
     [Numeric] Jika rata-rata kedatangan paket adalah 5 per ms, berapakah variansi jumlah paket per ms?
     """
-    raise NotImplementedError
+    return 5.0
