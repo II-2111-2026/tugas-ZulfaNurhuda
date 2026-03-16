@@ -8,6 +8,9 @@ jobs:
   evaluate:
     name: 🤖 Evaluate
     runs-on: ubuntu-latest
+    if: >
+      !contains(github.event.head_commit.message || '', '#without[autograder]') && 
+      !contains(github.event.head_commit.message || '', '#without[all]')
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
@@ -36,7 +39,7 @@ jobs:
           setup-command: |
             python -m pip install -U pip
             if [ -f requirements.txt ]; then
-               pip install -r requirements.txt
+              pip install -r requirements.txt
             fi
 
       - name: ✨ Refine & Perfect Scores
