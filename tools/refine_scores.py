@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""
+[REFINE SCORES TO MATCH TOTAL]
+
+Rounds each test score to 2 decimals and adjusts the last nonzero score if needed 
+so the total matches the original sum (rounded to 2 decimals).
+"""
+
 import base64
 import json
 import os
