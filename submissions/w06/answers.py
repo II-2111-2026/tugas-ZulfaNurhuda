@@ -79,7 +79,7 @@ def q08() -> float:
 
 def q09() -> float:
     """
-    [Numeric] Untuk distribusi Poisson dengan lambda = 2, berapakah probabilitas P(X = 0)? (Gunakan 3 desimal)
+    [Numeric] Untuk distribusi Poisson dengan lambda = 2, berapakah probabilitas P(X = 0)? (Gunakan 3 desimal).
     """
     return 0.135
 
