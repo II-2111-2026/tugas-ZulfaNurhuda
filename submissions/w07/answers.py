@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Total luas di bawah kurva fungsi padat probabilitas (PDF) selalu sama dengan 1.
     """
-    raise NotImplementedError
+    return True
 
 def q02() -> bool:
     """
     [T/F] Distribusi Normal Standar memiliki mean 0 dan variansi 1.
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Pada distribusi kontinu, P(X <= x) selalu sama dengan P(X < x).
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) sigma/(X-mu)
      D) X-mu
     """
-    raise NotImplementedError
+    return "A"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) Eksponensial.
      D) Uniform.
     """
-    raise NotImplementedError
+    return "C"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) mu ± 3sigma
      D) 0 ± 1
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) 1,0
      D) 0,25
     """
-    raise NotImplementedError
+    return "B"
 
 def q08() -> float:
     """
     [Numeric] Jika Z ~ N(0,1), berapakah P(Z <= 0)?
     """
-    raise NotImplementedError
+    return 0.5
 
 def q09() -> float:
     """
     [Numeric] Sebuah komponen memiliki rata-rata waktu hidup 100 jam (Eksponensial). Berapakah parameter lambda-nya?
     """
-    raise NotImplementedError
+    return 0.01
 
 def q10() -> float:
     """
     [Numeric] Nilai Z untuk probabilitas kumulatif 0,975 adalah sekitar... (Gunakan 2 desimal)
     """
-    raise NotImplementedError
+    return 1.96
 
 def q11() -> float:
     """
     [Numeric] Jika X ~ N(10, 4), berapakah nilai skor-Z untuk X = 12?
     """
-    raise NotImplementedError
+    return 1.0
 
 def q12() -> float:
     """
     [Numeric] Pada distribusi Normal Standar, berapakah nilai P(Z > 3) mendekati? (Gunakan 4 desimal)
     """
-    raise NotImplementedError
+    return 0.0013
