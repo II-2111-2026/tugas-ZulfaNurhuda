@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Dalam model probabilistik, output yang sama akan selalu dihasilkan dari input yang sama terlepas dari variasi acak.
     """
-    raise NotImplementedError
+    return False
 
 def q02() -> bool:
     """
     [T/F] Probabilitas dari gabungan dua kejadian selalu lebih besar daripada probabilitas masing-masing kejadian.
     """
-    raise NotImplementedError
+    return False
 
 def q03() -> bool:
     """
     [T/F] Pada distribusi kontinu, P(X <= x) selalu sama dengan P(X < x).
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) 0,2
      D) 0,5
     """
-    raise NotImplementedError
+    return "C"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) E[X]
      D) E[X]2
     """
-    raise NotImplementedError
+    return "A"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Selalu 0,5.
      D) Berkurang seiring waktu.
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) 1,0
      D) 0,25
     """
-    raise NotImplementedError
+    return "B"
 
 def q08() -> float:
     """
     [Numeric] Berapa jumlah elemen dalam ruang sampel jika kita melempar dua buah dadu bersisi enam?
     """
-    raise NotImplementedError
+    return 36.0
 
 def q09() -> float:
     """
     [Numeric] Sebuah sistem memiliki probabilitas gagal 0,05. Berapakah probabilitas sistem tersebut berhasil?
     """
-    raise NotImplementedError
+    return 0.95
 
 def q10() -> float:
     """
     [Numeric] Sebuah sistem memiliki reliabilitas 0,99. Berapa probabilitas kegagalannya?
     """
-    raise NotImplementedError
+    return 0.01
 
 def q11() -> float:
     """
     [Numeric] Jika P(A) = 0,3, P(B|A) = 0,7 dan P(B|Ac) = 0,4, hitung P(B) menggunakan Hukum Probabilitas Total.
     """
-    raise NotImplementedError
+    return 0.49
 
 def q12() -> float:
     """
     [Numeric] Jika rata-rata kedatangan paket adalah 5 per ms, berapakah variansi jumlah paket per ms?
     """
-    raise NotImplementedError
+    return 5.0
