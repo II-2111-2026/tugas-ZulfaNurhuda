@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Jika p-value lebih kecil dari tingkat signifikansi alpha, maka kita gagal menolak hipotesis nol.
     """
-    raise NotImplementedError
+    return False
 
 def q02() -> bool:
     """
     [T/F] Galat Tipe I adalah kesalahan menolak H0 padahal H0 benar.
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Meningkatkan ukuran sampel biasanya akan meningkatkan kekuatan uji (power).
     """
-    raise NotImplementedError
+    return True
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) Statistik uji.
      D) Parameter.
     """
-    raise NotImplementedError
+    return "B"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) Dua arah.
      D) Tanpa arah.
     """
-    raise NotImplementedError
+    return "C"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Galat Tipe II.
      D) Signifikansi.
     """
-    raise NotImplementedError
+    return "A"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) 0,95
      D) 1,0
     """
-    raise NotImplementedError
+    return "B"
 
 def q08() -> float:
     """
     [Numeric] Jika statistik uji Z = 2,58 dan nilai kritis Zc = 1,96 untuk uji dua arah, apakah H0 ditolak? (Tulis 1 untuk Ya, 0 untuk Tidak)
     """
-    raise NotImplementedError
+    return 1.0
 
 def q09() -> float:
     """
     [Numeric] Berapakah nilai alpha jika tingkat kepercayaan adalah 99%?
     """
-    raise NotImplementedError
+    return 0.01
 
 def q10() -> float:
     """
     [Numeric] Dalam uji t dengan sampel n = 10, berapakah derajat kebebasannya?
     """
-    raise NotImplementedError
+    return 9.0
 
 def q11() -> float:
     """
     [Numeric] Jika p-value = 0,02 dan alpha = 0,05, apakah kita menolak H0? (Tulis 1 untuk Ya, 0 untuk Tidak)
     """
-    raise NotImplementedError
+    return 1.0
 
 def q12() -> float:
     """
     [Numeric] Jika statistik Z = 0, berapakah p-value untuk uji dua arah?
     """
-    raise NotImplementedError
+    return 1.0
