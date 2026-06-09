@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Pengujian A/B adalah aplikasi nyata dari uji hipotesis dua sampel.
     """
-    raise NotImplementedError
+    return True
 
 def q02() -> bool:
     """
     [T/F] Metrik "Presisi" mengukur seberapa banyak dari total prediksi positif yang benar-benar positif.
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Dalam monitoring sistem, kita biasanya mengabaikan outlier karena itu bukan bagian dari pola normal.
     """
-    raise NotImplementedError
+    return False
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) Mean.
      D) Range.
     """
-    raise NotImplementedError
+    return "B"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) Nilai rata-rata.
      D) Sampel ideal.
     """
-    raise NotImplementedError
+    return "B"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Menghapus bug secara otomatis.
      D) Mengganti peran programmer.
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) Akurasi 100%.
      D) Sistem sempurna.
     """
-    raise NotImplementedError
+    return "A"
 
 def q08() -> float:
     """
     [Numeric] Jika TP = 80 dan FP = 20, berapakah nilai presisinya?
     """
-    raise NotImplementedError
+    return 0.8
 
 def q09() -> float:
     """
     [Numeric] Jika akurasi model adalah 0,95 dan ada 1.000 data, berapa banyak prediksi yang benar?
     """
-    raise NotImplementedError
+    return 950.0
 
 def q10() -> float:
     """
     [Numeric] Hitung F1-score jika Presisi = 0,8 dan Recall = 0,8.
     """
-    raise NotImplementedError
+    return 0.8
 
 def q11() -> float:
     """
     [Numeric] Berapakah nilai skor-Z untuk data point 110 jika rata-rata 100 dan simpangan baku 5?
     """
-    raise NotImplementedError
+    return 2.0
 
 def q12() -> float:
     """
     [Numeric] Jika dalam pengujian A/B, p-value yang didapat adalah 0,001, apakah ada perbedaan signifikan pada alpha = 0,05? (Tulis 1 untuk Ya, 0 untuk Tidak)
     """
-    raise NotImplementedError
+    return 1.0
