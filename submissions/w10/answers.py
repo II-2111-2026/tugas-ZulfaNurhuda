@@ -17,19 +17,19 @@ def q01() -> bool:
     """
     [T/F] Teorema Limit Pusat menyatakan bahwa rata-rata sampel akan mendekati distribusi Normal jika ukuran sampel cukup besar (n >= 30).
     """
-    raise NotImplementedError
+    return True
 
 def q02() -> bool:
     """
     [T/F] Rata-rata dari distribusi sampling rata-rata (X-bar) selalu sama dengan rata-rata populasi (mu).
     """
-    raise NotImplementedError
+    return True
 
 def q03() -> bool:
     """
     [T/F] Semakin besar ukuran sampel, semakin besar pula Standard Error-nya.
     """
-    raise NotImplementedError
+    return False
 
 def q04() -> str:
     """
@@ -39,7 +39,7 @@ def q04() -> str:
      C) 0,1
      D) 100
     """
-    raise NotImplementedError
+    return "B"
 
 def q05() -> str:
     """
@@ -49,7 +49,7 @@ def q05() -> str:
      C) Populasi sangat heterogen.
      D) p = 0,5.
     """
-    raise NotImplementedError
+    return "B"
 
 def q06() -> str:
     """
@@ -59,7 +59,7 @@ def q06() -> str:
      C) Error tidak dipengaruhi oleh n.
      D) Sampel besar selalu buruk.
     """
-    raise NotImplementedError
+    return "B"
 
 def q07() -> str:
     """
@@ -69,34 +69,34 @@ def q07() -> str:
      C) Konstanta.
      D) Bias.
     """
-    raise NotImplementedError
+    return "A"
 
 def q08() -> float:
     """
     [Numeric] Jika mu = 50 dan sigma = 10, berapakah nilai rata-rata dari distribusi sampling rata-rata untuk n = 25?
     """
-    raise NotImplementedError
+    return 50.0
 
 def q09() -> float:
     """
     [Numeric] Hitung Standard Error jika sigma = 12 dan n = 36.
     """
-    raise NotImplementedError
+    return 2.0
 
 def q10() -> float:
     """
     [Numeric] Jika rata-rata populasi 100 dan Standard Error 2, berapakah skor-Z untuk rata-rata sampel X-bar = 104?
     """
-    raise NotImplementedError
+    return 2.0
 
 def q11() -> float:
     """
     [Numeric] Jika ukuran sampel adalah 64 dan simpangan baku populasi 8, berapakah simpangan baku distribusi rata-rata sampel?
     """
-    raise NotImplementedError
+    return 1.0
 
 def q12() -> float:
     """
     [Numeric] Berapakah nilai rata-rata sampel X-bar jika skor-Z nya adalah 1,5, mu = 80, dan Standard Error = 4?
     """
-    raise NotImplementedError
+    return 86.0
